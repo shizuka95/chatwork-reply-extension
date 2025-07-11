@@ -1,0 +1,10 @@
+{
+  "name": "gmail-extension",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,25 @@
+# → 上記コードに差し替え（or追記）して保存
+
+npx tsc src/content_script.ts --outDir dist
+# → dist/content_script.js が更新されます
+
+# Chromeで拡張を再読み込みし、Gmail画面で再度Consoleを確認
+
+"use strict";
+
+console.log("Gmail拡張機能が読み込まれました");
+
+const observer = new MutationObserver(() => {
+  const sendButton = document.querySelector(
+    'div[aria-label="送信"], div[data-tooltip^="送信"], div[role="button"][data-tooltip^="Send"]'
+  );
+  if (sendButton) {
+    console.log("✅ 送信ボタンが見つかりました！");
+    observer.disconnect();
+  }
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});

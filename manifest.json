@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Auto Sender",
+  "version": "1.0",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://app.chatwork.com/*",
+    "https://www.chatwork.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["dist/content_script.js"],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://app.chatwork.com/*", "https://www.chatwork.com/*"],
+      "js": ["dist/content_script_chatwork.js"]
+    }
+  ]
+}
