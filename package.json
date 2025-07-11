@@ -1,9 +1,14 @@
 {
-  "name": "gmail-extension",
+  "name": "chatwork-reply-extension",
   "version": "1.0.0",
+  "description": "A Chrome extension PoC for auto-replying in Chatwork and Gmail",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "echo 'Start script is not defined'"
   },
+  "author": "Shizuka Yamada",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^5.8.3"
   }
